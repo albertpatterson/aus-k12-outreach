@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Albert event",
+    "description": "albert's event",
+    "start": "2025-05-15T18:00:00.000Z",
+    "end": "2025-05-15T20:00:00.000Z",
+    "location": "1825 gunsite drive, round rock TX",
+    "signUpLink": "www.signup.com",
+    "signUpByEmailInstruction": ""
+  },
+  {
+    "name": "Albert event 12",
+    "description": "albert's event",
+    "start": "2025-05-22T10:00:00.000Z",
+    "end": "2025-05-22T12:00:00.000Z",
+    "location": "1825 gunsite drive, round rock TX",
+    "signUpLink": "",
+    "signUpByEmailInstruction": "email albert at alpatterson@google.com"
+  }
+]

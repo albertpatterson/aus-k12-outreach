@@ -1,0 +1,18 @@
+{
+  "name": "aus-k12-outreach",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run --workspace app dev",
+    "update-data": "npm run --workspace data run",
+    "build": "npm run --workspace data run; npm run --workspace app dev"
+  },
+  "workspaces": [
+    "app",
+    "data"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
