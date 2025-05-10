@@ -9,7 +9,8 @@
     "build-app": "npm run --workspace app build",
     "build-all-v1": "npm run --workspace data run && npm run --workspace app dev",
     "build-all": "npm run build-data && npm run build-app",
-    "build-all-deploy": "npm run build-all && firebase deploy"
+    "deploy": "export GOOGLE_APPLICATION_CREDENTIALS=\"/Users/personal/code/expr/aus-k12-outreach/secret/aus-k12-outreach-key.json\" && firebase deploy",
+    "build-all-deploy": "npm run build-all && npm run deploy"
   },
   "workspaces": [
     "app",
