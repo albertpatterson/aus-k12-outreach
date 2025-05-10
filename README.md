@@ -16,3 +16,4 @@ The app section of this project will use the data pulled from the Google Sheet a
 1) Deploy the app ```npm run deploy```
 
 ### The full flow to update and deploy the app with the latest data can be performed with ```npm run build-all-deploy```
+Note that it can take up to 10 minutes for the app to update on the server
