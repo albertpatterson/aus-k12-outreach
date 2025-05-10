@@ -5,8 +5,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm run --workspace app dev",
-    "update-data": "npm run --workspace data run",
-    "build": "npm run --workspace data run && npm run --workspace app dev"
+    "build-data": "npm run --workspace data run",
+    "build-app": "npm run --workspace app build",
+    "build-all-v1": "npm run --workspace data run && npm run --workspace app dev",
+    "build-all": "npm run build-data && npm run build-app",
+    "build-all-deploy": "npm run build-all && firebase deploy"
   },
   "workspaces": [
     "app",
