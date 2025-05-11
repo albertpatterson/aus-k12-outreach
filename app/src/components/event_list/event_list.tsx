@@ -6,7 +6,20 @@ import { getUpcomingEvents } from '../../util/events';
 const upcomingEvents: Event[] = getUpcomingEvents();
 
 const StyledMarkdown = (props: { markdown: string }) => (
-  <ReactMarkdown>{props.markdown}</ReactMarkdown>
+  <ReactMarkdown
+    components={{
+      a: ({ _, ...props }) => (
+        <a
+          {...props}
+          style={{
+            lineBreak: 'anywhere',
+          }}
+        />
+      ),
+    }}
+  >
+    {props.markdown}
+  </ReactMarkdown>
 );
 
 function EventCard(event: Event) {

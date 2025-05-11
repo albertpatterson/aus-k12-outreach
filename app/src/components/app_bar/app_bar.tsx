@@ -22,7 +22,7 @@ export default function MyAppBar() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <>
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -43,6 +43,6 @@ export default function MyAppBar() {
         </Toolbar>
       </AppBar>
       <MyDrawer open={open} handleClose={closeDrawer} />
-    </Box>
+    </>
   );
 }
