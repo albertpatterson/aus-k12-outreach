@@ -1,9 +1,9 @@
 import { Card, CardContent, Typography } from '@mui/material';
 import ReactMarkdown from 'react-markdown';
 import { Event } from '../../types/types';
-import { getEvents } from '../../util/events';
+import { getUpcomingEvents } from '../../util/events';
 
-const events: Event[] = getEvents();
+const upcomingEvents: Event[] = getUpcomingEvents();
 
 const StyledMarkdown = (props: { markdown: string }) => (
   <ReactMarkdown>{props.markdown}</ReactMarkdown>
@@ -39,7 +39,7 @@ function EventCard(event: Event) {
 }
 
 export default function EventMap() {
-  return events.map((event, index) => (
+  return upcomingEvents.map((event, index) => (
     <EventCard
       key={index}
       name={event.name}

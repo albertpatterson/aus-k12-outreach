@@ -1,4 +1,4 @@
-import events from '../../../data/json/events.json' with { type: 'json' };
+import upcomingEvents from '../../../data/json/upcoming-events.json' with { type: 'json' };
 import {replaceEmailWithMarkdown, replaceRawLinkWithMarkdown} from './markdown';
 import {Event} from '../types/types';
 
@@ -40,6 +40,6 @@ function parseEvent(json: EventJson): Event | null {
     }
 }
 
-export function getEvents(){
-    return events.map((eventJson) => parseEvent(eventJson)).filter((event) => event !== null) as Event[];
+export function getUpcomingEvents(){
+    return upcomingEvents.map((eventJson) => parseEvent(eventJson)).filter((event) => event !== null) as Event[];
 }

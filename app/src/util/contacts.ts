@@ -1,4 +1,4 @@
-import contacts from '../../../data/json/contacts.json' with { type: 'json' };
+import contacts from '../../../data/json/all-contacts.json' with { type: 'json' };
 import {Contact} from '../types/types';
 
 interface ContactJson {
