@@ -8,7 +8,7 @@ const upcomingEvents: Event[] = getUpcomingEvents();
 const StyledMarkdown = (props: { markdown: string }) => (
   <ReactMarkdown
     components={{
-      a: ({ _, ...props }) => (
+      a: ({ node, ...props }) => (
         <a
           {...props}
           style={{
