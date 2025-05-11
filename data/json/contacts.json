@@ -1,32 +1,20 @@
 [
   {
+    "name": "Monica Magallanes",
+    "description": "Career and Education Outreach Coordinator",
+    "email": "",
+    "linkedin": "https://www.linkedin.com/in/monica-magallanes-ba9939138/"
+  },
+  {
+    "name": "Samantha Ruiz-Gross",
+    "description": "Career and Education Outreach Specialist",
+    "email": "",
+    "linkedin": "https://www.linkedin.com/in/samanthargross/"
+  },
+  {
     "name": "Albert Patterson",
-    "description": "Software Engineer email: apatterson189@gmail.com and personal site www.ap.com",
+    "description": "Software Engineer",
     "email": "apatterson189@gmail.com",
     "linkedin": "https://www.linkedin.com/in/apattersoncmu/"
-  },
-  {
-    "name": "bert",
-    "description": "bbb",
-    "email": "",
-    "linkedin": ""
-  },
-  {
-    "name": "kelly",
-    "description": "jjj",
-    "email": "",
-    "linkedin": ""
-  },
-  {
-    "name": "Harshneel",
-    "description": "HH hh",
-    "email": "",
-    "linkedin": ""
-  },
-  {
-    "name": "h2",
-    "description": "hyasdf 00000 0000 ",
-    "email": "h2@h.com",
-    "linkedin": ""
   }
 ]

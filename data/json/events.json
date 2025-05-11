@@ -1,20 +1,29 @@
 [
   {
-    "name": "Albert event",
-    "description": "albert's event",
-    "start": "2025-05-15T18:00:00.000Z",
-    "end": "2025-05-15T20:00:00.000Z",
-    "location": "1825 gunsite drive, round rock TX",
-    "signUpLink": "www.signup.com",
+    "name": "Akins Early College High School Career Fair",
+    "description": "Post-Grad Planning Night: speak to students searching for their next career move and as well as parents ready to support their graduating students. Meet students and eductors in person at a career day event in the school to talk about working at Google, your path to Google, and the importance of tech skills. ",
+    "start": "2025-05-15T22:30:00.000Z",
+    "end": "2025-05-16T00:30:00.000Z",
+    "location": "10701 S 1st St, Austin, TX 78748",
+    "signUpLink": "https://docs.google.com/forms/d/e/1FAIpQLSccffj0v4mKLbmGP-YgfFoOdlwaM1sZLoatVF2cgAOX-CMKxQ/viewform",
     "signUpByEmailInstruction": ""
   },
   {
-    "name": "Albert event 12",
-    "description": "albert's event",
-    "start": "2025-05-22T10:00:00.000Z",
-    "end": "2025-05-22T12:00:00.000Z",
-    "location": "1825 gunsite drive, round rock TX",
+    "name": "Garcia YML Career Day",
+    "description": "Meet students and eductors in person at a career day event where you discuss your work and help students get ideas about what they want to do when they grow up",
+    "start": "2025-05-22T18:00:00.000Z",
+    "end": "2025-05-22T20:45:00.000Z",
+    "location": "7414 Johnny Morris Rd, Austin, TX 78724",
+    "signUpLink": "https://docs.google.com/forms/d/1vD474rJUc4agpQeKqP1dSsl9lFDswX0hNpmRGAzjpyA/alreadyresponded?edit_requested=true",
+    "signUpByEmailInstruction": ""
+  },
+  {
+    "name": "Pioneer Elementary Career Day",
+    "description": "Meet students and eductors in person at a career day event where you discuss your work and help students get ideas about what they want to do when they grow up",
+    "start": "2025-05-23T13:00:00.000Z",
+    "end": "2025-05-23T15:00:00.000Z",
+    "location": "7104 Berkman Dr, Austin, TX 78752",
     "signUpLink": "",
-    "signUpByEmailInstruction": "email albert at alpatterson@google.com"
+    "signUpByEmailInstruction": "Message Samantha at Samantha.Ruiz-Gross@wfscapitalarea.com."
   }
 ]
