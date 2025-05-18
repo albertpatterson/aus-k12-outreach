@@ -4,7 +4,14 @@ import { Contact } from '../../types/types';
 
 function ContactCard(contact: Contact) {
   return (
-    <Card style={{ margin: '16px auto', maxWidth: '400px', textAlign: 'left' }}>
+    <Card
+      style={{
+        margin: '16px auto',
+        maxWidth: '400px',
+        textAlign: 'left',
+        width: 'calc(100% - 32px)',
+      }}
+    >
       <CardContent>
         <Typography variant="h5" component="div">
           {contact.name}
@@ -39,7 +46,7 @@ function ContactCard(contact: Contact) {
 
 const contacts: Contact[] = getContacts();
 
-export default function EventMap() {
+export default function Contacts() {
   return contacts.map((contact, index) => (
     <ContactCard key={index} {...contact} />
   ));

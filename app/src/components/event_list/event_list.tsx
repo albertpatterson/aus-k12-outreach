@@ -24,7 +24,14 @@ const StyledMarkdown = (props: { markdown: string }) => (
 
 function EventCard(event: Event) {
   return (
-    <Card style={{ margin: '16px auto', maxWidth: '400px', textAlign: 'left' }}>
+    <Card
+      style={{
+        margin: '16px auto',
+        maxWidth: '400px',
+        textAlign: 'left',
+        width: 'calc(100% - 32px)',
+      }}
+    >
       <CardContent>
         <Typography variant="h5" component="div">
           {event.name}
