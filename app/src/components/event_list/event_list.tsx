@@ -72,6 +72,8 @@ export default function EventMap() {
       end={event.end}
       location={event.location}
       signUpMarkdown={event.signUpMarkdown}
+      latitude={event.latitude}
+      longitude={event.longitude}
     />
   ));
 }

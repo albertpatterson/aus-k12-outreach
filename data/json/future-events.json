@@ -6,7 +6,9 @@
     "end": "2025-05-22T20:45:00.000Z",
     "location": "7414 Johnny Morris Rd, Austin, TX 78724",
     "signUpLink": "https://docs.google.com/forms/d/1vD474rJUc4agpQeKqP1dSsl9lFDswX0hNpmRGAzjpyA/alreadyresponded?edit_requested=true",
-    "signUpByEmailInstruction": ""
+    "signUpByEmailInstruction": "",
+    "latitude": 30.3109892943715,
+    "longitude": -97.6422223301003
   },
   {
     "name": "Pioneer Elementary Career Day",
@@ -15,6 +17,8 @@
     "end": "2025-05-23T15:00:00.000Z",
     "location": "7104 Berkman Dr, Austin, TX 78752",
     "signUpLink": "https://docs.google.com/forms/d/e/1FAIpQLScGgGY7UIM-wGu6-xDwUEfj9kaem1O3x9pYdd9M60zDAJxkdQ/viewform",
-    "signUpByEmailInstruction": ""
+    "signUpByEmailInstruction": "",
+    "latitude": 30.361920728985606,
+    "longitude": -97.63991398591864
   }
 ]

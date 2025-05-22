@@ -37,6 +37,6 @@ export async function fetchContacts() {
 
 export async function fetchEvents() {
   const spreadsheetId = '1jQ-Rou08NcR_7GLK1twpi4rGgp0L1DHTIOdJdI2nF-A';
-  const range = 'Events!A2:G';
+  const range = 'Events!A2:H';
   return getValues(spreadsheetId, range);
 }

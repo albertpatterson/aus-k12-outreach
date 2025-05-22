@@ -10,6 +10,8 @@ interface EventJson {
     location?: string;
     signUpLink?: string;
     signUpByEmailInstruction?: string;
+    latitude?: number;
+    longitude?: number;
 }
 
 function getSignUpMarkdown(json: EventJson): string|null {
@@ -25,7 +27,7 @@ function parseEvent(json: EventJson): Event | null {
 
     const signUpMarkdown = getSignUpMarkdown(json);
 
-    if(!(json.name && json.description && json.start && json.end && json.location && signUpMarkdown)){
+    if(!(json.name && json.description && json.start && json.end && json.location && signUpMarkdown && json.latitude && json.longitude)){
         console.error('Event is missing required fields:', json);
         return null;
     }
@@ -37,6 +39,8 @@ function parseEvent(json: EventJson): Event | null {
         end: new Date(json.end),
         location: json.location,
         signUpMarkdown: signUpMarkdown,
+        latitude: json.latitude,
+        longitude: json.longitude,
     }
 }
 

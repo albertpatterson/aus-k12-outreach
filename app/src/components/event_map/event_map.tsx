@@ -8,6 +8,11 @@ import {
 import { useState } from 'react';
 import Box from '@mui/material/Box';
 
+import { Event } from '../../types/types';
+import { getUpcomingEvents } from '../../util/events';
+
+const upcomingEvents: Event[] = getUpcomingEvents();
+
 function Marker(props: {
   title: string;
   position: google.maps.LatLngLiteral;
@@ -34,7 +39,7 @@ function Marker(props: {
           headerDisabled={true}
         >
           <div>
-            <p>Details about {props.title}.</p>
+            <p>{props.title}.</p>
             <a href="https://www.google.com">Link to more info</a>
           </div>
         </InfoWindow>
@@ -61,20 +66,10 @@ export default function EventMap() {
   const position = { lat: 30.266375800188623, lng: -97.7491266114782 };
 
   const events: Array<{ title: string; position: google.maps.LatLngLiteral }> =
-    [
-      {
-        title: 'Event 1',
-        position: { lat: 30.266375800188623, lng: -97.7491266114782 },
-      },
-      {
-        title: 'Event 2',
-        position: { lat: 30.27, lng: -97.75 },
-      },
-      {
-        title: 'Event 3',
-        position: { lat: 30.28, lng: -97.76 },
-      },
-    ];
+    upcomingEvents.map((event) => ({
+      title: event.name,
+      position: { lat: event.latitude, lng: event.longitude },
+    }));
 
   return (
     <Box sx={{ display: 'flex', height: '100%', width: '100%' }}>

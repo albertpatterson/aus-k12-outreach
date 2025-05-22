@@ -6,7 +6,9 @@
     "end": "2025-05-01T20:45:00.000Z",
     "location": "355 FM 973. Taylor, TX 76574",
     "signUpLink": "https://docs.google.com/forms/d/e/1FAIpQLSd1HajIZgS3bsNOBMMUFyqXb1gXPOoMsxbJ27qYiCYkK6vIGg/viewform?usp=sharing",
-    "signUpByEmailInstruction": ""
+    "signUpByEmailInstruction": "",
+    "latitude": 30.548331390609288,
+    "longitude": -97.43118247612668
   },
   {
     "name": "Manor Rise Academy Career Day",
@@ -15,7 +17,9 @@
     "end": "2025-05-02T16:00:00.000Z",
     "location": "13300 FM-973, Manor, TX 78653",
     "signUpLink": "",
-    "signUpByEmailInstruction": "Message Samantha at Samantha.Ruiz-Gross@wfscapitalarea.com."
+    "signUpByEmailInstruction": "Message Samantha at Samantha.Ruiz-Gross@wfscapitalarea.com.",
+    "latitude": 30.356313062685345,
+    "longitude": -97.53729230311548
   },
   {
     "name": "Overton Elementary Career Showcase",
@@ -24,7 +28,9 @@
     "end": "2025-05-08T17:00:00.000Z",
     "location": "7201 Colony Loop Dr, Austin, TX 78724",
     "signUpLink": "",
-    "signUpByEmailInstruction": "Message Jasmine Lee at jasmine.lee@austinisd.org"
+    "signUpByEmailInstruction": "Message Jasmine Lee at jasmine.lee@austinisd.org",
+    "latitude": 30.300780038085087,
+    "longitude": -97.63570328777269
   },
   {
     "name": "Akins Early College High School Career Fair",
@@ -33,7 +39,9 @@
     "end": "2025-05-16T00:30:00.000Z",
     "location": "10701 S 1st St, Austin, TX 78748",
     "signUpLink": "https://docs.google.com/forms/d/e/1FAIpQLSccffj0v4mKLbmGP-YgfFoOdlwaM1sZLoatVF2cgAOX-CMKxQ/viewform",
-    "signUpByEmailInstruction": ""
+    "signUpByEmailInstruction": "",
+    "latitude": 30.148849914616292,
+    "longitude": -97.8015862859244
   },
   {
     "name": "Blake Manor Career Day",
@@ -42,7 +50,9 @@
     "end": "2025-05-16T20:00:00.000Z",
     "location": "18010 Blake Manor Rd, Manor, TX 78653",
     "signUpLink": "https://docs.google.com/forms/d/e/1FAIpQLScGgGY7UIM-wGu6-xDwUEfj9kaem1O3x9pYdd9M60zDAJxkdQ/viewform",
-    "signUpByEmailInstruction": ""
+    "signUpByEmailInstruction": "",
+    "latitude": 30.308693829845947,
+    "longitude": -97.53337681534424
   },
   {
     "name": "College, Career, and Job Fair at LBJ Early College High School",
@@ -51,7 +61,9 @@
     "end": "2025-05-21T18:30:00.000Z",
     "location": "7309 Lazy Creek Dr, Austin, TX 78724",
     "signUpLink": "https://click-1755152.icptrack.com/icp/relay.php?r=113353674&msgid=384749&act=6X56&c=1755152&pid=830533&destination=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSdd2AjBN7EpK5Z0VWzOc3ilKprnMX1eHFvkCeEhEIouLyRggw%2Fviewform&cf=10033&v=7de64a7f2c6fa12b7de280ca8d1e32849ac3624cf6c0a1cf2b2735b645b164ff",
-    "signUpByEmailInstruction": ""
+    "signUpByEmailInstruction": "",
+    "latitude": 30.313848610328442,
+    "longitude": -97.65685159167107
   },
   {
     "name": "Garcia YMLA Career Day",
@@ -60,7 +72,9 @@
     "end": "2025-05-22T20:45:00.000Z",
     "location": "7414 Johnny Morris Rd, Austin, TX 78724",
     "signUpLink": "https://docs.google.com/forms/d/1vD474rJUc4agpQeKqP1dSsl9lFDswX0hNpmRGAzjpyA/alreadyresponded?edit_requested=true",
-    "signUpByEmailInstruction": ""
+    "signUpByEmailInstruction": "",
+    "latitude": 30.3109892943715,
+    "longitude": -97.6422223301003
   },
   {
     "name": "Pioneer Elementary Career Day",
@@ -69,6 +83,8 @@
     "end": "2025-05-23T15:00:00.000Z",
     "location": "7104 Berkman Dr, Austin, TX 78752",
     "signUpLink": "https://docs.google.com/forms/d/e/1FAIpQLScGgGY7UIM-wGu6-xDwUEfj9kaem1O3x9pYdd9M60zDAJxkdQ/viewform",
-    "signUpByEmailInstruction": ""
+    "signUpByEmailInstruction": "",
+    "latitude": 30.361920728985606,
+    "longitude": -97.63991398591864
   }
 ]

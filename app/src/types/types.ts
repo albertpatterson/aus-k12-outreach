@@ -5,6 +5,8 @@ export interface Event {
     end: Date;
     location: string;
     signUpMarkdown: string;
+    latitude: number;
+    longitude: number;
   }
 
 export interface Contact {

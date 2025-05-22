@@ -1,12 +1,3 @@
-// function transformEmailsToMarkdown(text) {
-//   return text.replace(
-//     /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g,
-//     (match) => {
-//       return `[${match}](mailto:${match})`;
-//     }
-//   );
-// }
-
 export function parseContact(row) {
   const [name, description, email, linkedin] = row;
 
@@ -23,6 +14,16 @@ export function parseContact(row) {
   };
 }
 
+function parseLatLong(latlong) {
+  try {
+    const [latitude, longitude] = latlong.split(',').map(Number);
+    return { latitude, longitude };
+  } catch (error) {
+    console.warn(`failed to parse latlong: ${latlong}`);
+    return { latitude: null, longitude: null };
+  }
+}
+
 export function parseEvent(row) {
   const [
     name,
@@ -32,11 +33,18 @@ export function parseEvent(row) {
     location,
     signUpLink,
     signUpByEmailInstruction,
+    latlong,
   ] = row;
 
   const signUp = signUpLink || signUpByEmailInstruction;
 
-  if (!(name && description && start && end && location && signUp)) {
+  const { latitude, longitude } = parseLatLong(latlong);
+
+  if (
+    !(name && description && start && end && location && signUp,
+    latitude,
+    longitude)
+  ) {
     console.warn(`failed to parse event: ${name}`);
     return null;
   }
@@ -49,5 +57,7 @@ export function parseEvent(row) {
     location,
     signUpLink: signUpLink || '',
     signUpByEmailInstruction: signUpByEmailInstruction || '',
+    latitude,
+    longitude,
   };
 }
