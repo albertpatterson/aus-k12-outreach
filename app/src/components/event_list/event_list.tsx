@@ -8,14 +8,18 @@ const upcomingEvents: Event[] = getUpcomingEvents();
 const StyledMarkdown = (props: { markdown: string }) => (
   <ReactMarkdown
     components={{
-      a: ({ node, ...props }) => (
-        <a
-          {...props}
-          style={{
-            lineBreak: 'anywhere',
-          }}
-        />
-      ),
+      a: (fullProps) => {
+        const props = { ...fullProps };
+        delete props.node;
+        return (
+          <a
+            {...props}
+            style={{
+              lineBreak: 'anywhere',
+            }}
+          />
+        );
+      },
     }}
   >
     {props.markdown}

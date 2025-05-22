@@ -45,7 +45,7 @@ export function getUpcomingEvents(){
   const twoMonthsFromNow = new Date();
   twoMonthsFromNow.setMonth(now.getMonth() + 2);
 
-    return futureEvents.map((eventJson: EventJson) => parseEvent(eventJson)).filter((event:Event) => {
+    return futureEvents.map((eventJson: EventJson) => parseEvent(eventJson)).filter((event: Event|null) => {
         if (event === null) {
             return false;
         }
