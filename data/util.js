@@ -4,11 +4,7 @@ export function sortByStart(events) {
   });
 }
 
-export function getUpcoming(events) {
+export function getFuture(events) {
   const now = new Date();
-  const twoMonthsFromNow = new Date();
-  twoMonthsFromNow.setMonth(now.getMonth() + 2);
-  return events.filter(
-    (event) => event.start >= now && event.start <= twoMonthsFromNow
-  );
+  return events.filter((event) => event.end && event.end >= now);
 }

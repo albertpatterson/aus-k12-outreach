@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Garcia YMLA Career Day",
+    "description": "Meet students and eductors in person at a career day event where you discuss your work and help students get ideas about what they want to do when they grow up",
+    "start": "2025-05-22T18:00:00.000Z",
+    "end": "2025-05-22T20:45:00.000Z",
+    "location": "7414 Johnny Morris Rd, Austin, TX 78724",
+    "signUpLink": "https://docs.google.com/forms/d/1vD474rJUc4agpQeKqP1dSsl9lFDswX0hNpmRGAzjpyA/alreadyresponded?edit_requested=true",
+    "signUpByEmailInstruction": ""
+  },
+  {
+    "name": "Pioneer Elementary Career Day",
+    "description": "Meet students and eductors in person at a career day event where you discuss your work and help students get ideas about what they want to do when they grow up",
+    "start": "2025-05-23T13:00:00.000Z",
+    "end": "2025-05-23T15:00:00.000Z",
+    "location": "7104 Berkman Dr, Austin, TX 78752",
+    "signUpLink": "https://docs.google.com/forms/d/e/1FAIpQLScGgGY7UIM-wGu6-xDwUEfj9kaem1O3x9pYdd9M60zDAJxkdQ/viewform",
+    "signUpByEmailInstruction": ""
+  }
+]

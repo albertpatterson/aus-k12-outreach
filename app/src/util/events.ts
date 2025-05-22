@@ -1,4 +1,4 @@
-import upcomingEvents from '../../../data/json/upcoming-events.json' with { type: 'json' };
+import futureEvents from '../../../data/json/future-events.json' with { type: 'json' };
 import {replaceEmailWithMarkdown, replaceRawLinkWithMarkdown} from './markdown';
 import {Event} from '../types/types';
 
@@ -41,5 +41,16 @@ function parseEvent(json: EventJson): Event | null {
 }
 
 export function getUpcomingEvents(){
-    return upcomingEvents.map((eventJson) => parseEvent(eventJson)).filter((event) => event !== null) as Event[];
+  const now = new Date();
+  const twoMonthsFromNow = new Date();
+  twoMonthsFromNow.setMonth(now.getMonth() + 2);
+
+    return futureEvents.map((eventJson: EventJson) => parseEvent(eventJson)).filter((event:Event) => {
+        if (event === null) {
+            return false;
+        }
+        const start = event.start;
+        const end = event.end;
+        return end >= now && start <= twoMonthsFromNow;
+    }) as Event[];
 }
