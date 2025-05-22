@@ -7,6 +7,7 @@ export interface Event {
     signUpMarkdown: string;
     latitude: number;
     longitude: number;
+    id: string;
   }
 
 export interface Contact {

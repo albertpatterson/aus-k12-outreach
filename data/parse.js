@@ -61,3 +61,28 @@ export function parseEvent(row) {
     longitude,
   };
 }
+
+function createBaseId(event) {
+  const { name, start } = event;
+  return `${name}-${start.toISOString()}`.replace(/[^a-zA-Z0-9]/g, '-');
+}
+
+export function parseEvents(rows) {
+  const ids = new Set();
+  return rows
+    .map((row) => {
+      const event = parseEvent(row);
+      if (event) {
+        let id = createBaseId(event);
+        let suffixIdx = 0;
+        while (ids.has(id)) {
+          suffixIdx++;
+          id = `${id}-${suffixIdx}`;
+        }
+        ids.add(id);
+        return { ...event, id };
+      }
+      return null;
+    })
+    .filter(Boolean);
+}

@@ -1,7 +1,7 @@
 import { fetchContacts } from './fetch.js';
 import { fetchEvents } from './fetch.js';
 import { parseContact } from './parse.js';
-import { parseEvent } from './parse.js';
+import { parseEvents } from './parse.js';
 import { writeFile } from 'fs/promises';
 import { sortByStart, getFuture } from './util.js';
 
@@ -12,7 +12,7 @@ console.log('Contacts:', contacts);
 await writeFile('./json/all-contacts.json', JSON.stringify(contacts, null, 2));
 
 const eventData = await fetchEvents();
-const events = eventData.map(parseEvent).filter(Boolean);
+const events = parseEvents(eventData);
 const sortedEvents = sortByStart(events);
 const futureEvents = getFuture(sortedEvents);
 console.log('Events:', sortedEvents);

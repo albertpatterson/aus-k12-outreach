@@ -2,6 +2,8 @@ import { Card, CardContent, Typography } from '@mui/material';
 import ReactMarkdown from 'react-markdown';
 import { Event } from '../../types/types';
 import { getUpcomingEvents } from '../../util/events';
+import { useLocation } from 'react-router';
+import { useEffect } from 'react';
 
 const upcomingEvents: Event[] = getUpcomingEvents();
 
@@ -35,6 +37,7 @@ function EventCard(event: Event) {
         textAlign: 'left',
         width: 'calc(100% - 32px)',
       }}
+      id={event.id}
     >
       <CardContent>
         <Typography variant="h5" component="div">
@@ -62,7 +65,18 @@ function EventCard(event: Event) {
   );
 }
 
-export default function EventMap() {
+export default function EventList() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [hash]);
+
   return upcomingEvents.map((event, index) => (
     <EventCard
       key={index}
@@ -74,6 +88,7 @@ export default function EventMap() {
       signUpMarkdown={event.signUpMarkdown}
       latitude={event.latitude}
       longitude={event.longitude}
+      id={event.id}
     />
   ));
 }

@@ -19,6 +19,7 @@ function Marker(props: {
   showInfo?: boolean;
   onClickMarker?: () => void;
   onCloseInfo?: () => void;
+  eventId: string;
 }) {
   const [markerRef, marker] = useAdvancedMarkerRef();
 
@@ -39,8 +40,8 @@ function Marker(props: {
           headerDisabled={true}
         >
           <div>
-            <p>{props.title}.</p>
-            <a href="https://www.google.com">Link to more info</a>
+            <p>{props.title}</p>
+            <a href={`event-list#${props.eventId}`}>More Info</a>
           </div>
         </InfoWindow>
       )}
@@ -65,11 +66,15 @@ export default function EventMap() {
 
   const position = { lat: 30.266375800188623, lng: -97.7491266114782 };
 
-  const events: Array<{ title: string; position: google.maps.LatLngLiteral }> =
-    upcomingEvents.map((event) => ({
-      title: event.name,
-      position: { lat: event.latitude, lng: event.longitude },
-    }));
+  const events: Array<{
+    title: string;
+    position: google.maps.LatLngLiteral;
+    id: string;
+  }> = upcomingEvents.map((event) => ({
+    title: event.name,
+    position: { lat: event.latitude, lng: event.longitude },
+    id: event.id,
+  }));
 
   return (
     <Box sx={{ display: 'flex', height: '100%', width: '100%' }}>
@@ -90,6 +95,7 @@ export default function EventMap() {
               showInfo={openInfoIdx === index}
               onClickMarker={() => handleMarkerClick(index)}
               onCloseInfo={handleCloseInfo}
+              eventId={event.id}
             />
           ))}
         </Map>
