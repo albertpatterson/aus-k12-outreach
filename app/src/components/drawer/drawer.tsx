@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import ListIcon from '@mui/icons-material/List';
 import MapIcon from '@mui/icons-material/Map';
 import HomeIcon from '@mui/icons-material/Home';
+import { useBuildUrl } from '../../util/url';
 
 export interface MyDrawerProps {
   open: boolean;
@@ -17,15 +18,14 @@ export interface MyDrawerProps {
 }
 
 export default function MyDrawer(props: MyDrawerProps) {
-  console.log('MyDrawer props', props);
-
+  const buildUrl = useBuildUrl();
   const navigate = useNavigate();
 
   const DrawerList = (
     <>
       <List>
         <ListItem key="Home" disablePadding>
-          <ListItemButton onClick={() => navigate('/home')}>
+          <ListItemButton onClick={() => navigate(buildUrl('home'))}>
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
@@ -34,7 +34,7 @@ export default function MyDrawer(props: MyDrawerProps) {
         </ListItem>
 
         <ListItem key="Contacts" disablePadding>
-          <ListItemButton onClick={() => navigate('/contacts')}>
+          <ListItemButton onClick={() => navigate(buildUrl('contacts'))}>
             <ListItemIcon>
               <InboxIcon />
             </ListItemIcon>
@@ -43,7 +43,7 @@ export default function MyDrawer(props: MyDrawerProps) {
         </ListItem>
 
         <ListItem key="Event List" disablePadding>
-          <ListItemButton onClick={() => navigate('/event-list')}>
+          <ListItemButton onClick={() => navigate(buildUrl('event-list'))}>
             <ListItemIcon>
               <ListIcon />
             </ListItemIcon>
@@ -52,7 +52,7 @@ export default function MyDrawer(props: MyDrawerProps) {
         </ListItem>
 
         <ListItem key="Event Map" disablePadding>
-          <ListItemButton onClick={() => navigate('/event-map')}>
+          <ListItemButton onClick={() => navigate(buildUrl('event-map'))}>
             <ListItemIcon>
               <MapIcon />
             </ListItemIcon>

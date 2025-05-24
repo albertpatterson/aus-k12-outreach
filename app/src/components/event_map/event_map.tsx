@@ -7,21 +7,27 @@ import {
 } from '@vis.gl/react-google-maps';
 import { useState } from 'react';
 import Box from '@mui/material/Box';
+import { useBuildUrl } from '../../util/url';
 
 import { Event } from '../../types/types';
-import { getUpcomingEvents } from '../../util/events';
+import { getUpcomingEvents, getRecentEvents } from '../../util/events';
+import { useSearchParams } from 'react-router-dom';
 
 const upcomingEvents: Event[] = getUpcomingEvents();
-
-function Marker(props: {
+const recentEvents: Event[] = getRecentEvents();
+interface MarkerProps {
   title: string;
   position: google.maps.LatLngLiteral;
   showInfo?: boolean;
   onClickMarker?: () => void;
   onCloseInfo?: () => void;
   eventId: string;
-}) {
+}
+
+function Marker(props: MarkerProps) {
   const [markerRef, marker] = useAdvancedMarkerRef();
+  const buildUrl = useBuildUrl();
+  const link = buildUrl('event-list', {}, props.eventId);
 
   return (
     <>
@@ -41,7 +47,7 @@ function Marker(props: {
         >
           <div>
             <p>{props.title}</p>
-            <a href={`event-list#${props.eventId}`}>More Info</a>
+            <a href={link}>More Info</a>
           </div>
         </InfoWindow>
       )}
@@ -50,6 +56,9 @@ function Marker(props: {
 }
 
 export default function EventMap() {
+  const [searchParams] = useSearchParams();
+  const includePast = searchParams.get('includePast') === 'true';
+
   const [openInfoIdx, setOpenInfoIdx] = useState<number | null>(null);
 
   const handleMarkerClick = (index: number) => {
@@ -66,15 +75,22 @@ export default function EventMap() {
 
   const position = { lat: 30.266375800188623, lng: -97.7491266114782 };
 
-  const events: Array<{
-    title: string;
-    position: google.maps.LatLngLiteral;
-    id: string;
-  }> = upcomingEvents.map((event) => ({
-    title: event.name,
-    position: { lat: event.latitude, lng: event.longitude },
-    id: event.id,
-  }));
+  const events = [...upcomingEvents];
+  if (includePast) {
+    events.push(...recentEvents);
+  }
+
+  const markers = events.map((event, index) => (
+    <Marker
+      key={event.id || index}
+      title={event.name}
+      position={{ lat: event.latitude, lng: event.longitude }}
+      showInfo={openInfoIdx === index}
+      onClickMarker={() => handleMarkerClick(index)}
+      onCloseInfo={handleCloseInfo}
+      eventId={event.id}
+    />
+  ));
 
   return (
     <Box sx={{ display: 'flex', height: '100%', width: '100%' }}>
@@ -87,17 +103,7 @@ export default function EventMap() {
           onClick={handleMapClick}
           disableDefaultUI={true}
         >
-          {events.map((event, index) => (
-            <Marker
-              key={index}
-              title={event.title}
-              position={event.position}
-              showInfo={openInfoIdx === index}
-              onClickMarker={() => handleMarkerClick(index)}
-              onCloseInfo={handleCloseInfo}
-              eventId={event.id}
-            />
-          ))}
+          {markers}
         </Map>
       </APIProvider>
     </Box>
