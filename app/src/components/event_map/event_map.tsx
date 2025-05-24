@@ -6,9 +6,9 @@ import {
   useAdvancedMarkerRef,
 } from '@vis.gl/react-google-maps';
 import { useState } from 'react';
-import Box from '@mui/material/Box';
+import { Box, Button } from '@mui/material';
 import { useBuildUrl } from '../../util/url';
-
+import { useNavigate } from 'react-router';
 import { Event } from '../../types/types';
 import { getUpcomingEvents, getRecentEvents } from '../../util/events';
 import { useSearchParams } from 'react-router-dom';
@@ -58,6 +58,8 @@ function Marker(props: MarkerProps) {
 export default function EventMap() {
   const [searchParams] = useSearchParams();
   const includePast = searchParams.get('includePast') === 'true';
+  const buildUrl = useBuildUrl();
+  const navigate = useNavigate();
 
   const [openInfoIdx, setOpenInfoIdx] = useState<number | null>(null);
 
@@ -103,6 +105,24 @@ export default function EventMap() {
           onClick={handleMapClick}
           disableDefaultUI={true}
         >
+          <Button
+            style={{
+              position: 'absolute',
+              bottom: 16,
+              left: '50%',
+              transform: 'translate(-50%, 0)',
+            }}
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              const link = buildUrl('event-map', {
+                includePast: `${!includePast}`,
+              });
+              navigate('/' + link);
+            }}
+          >
+            {includePast ? 'Hide Past Events' : 'Show Past Events'}
+          </Button>
           {markers}
         </Map>
       </APIProvider>

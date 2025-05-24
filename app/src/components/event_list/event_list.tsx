@@ -4,6 +4,7 @@ import {
   Typography,
   IconButton,
   Tooltip,
+  Button,
 } from '@mui/material';
 import ReactMarkdown from 'react-markdown';
 import { Event } from '../../types/types';
@@ -13,6 +14,7 @@ import { useEffect } from 'react';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { useSearchParams } from 'react-router-dom';
 import { useBuildUrl } from '../../util/url';
+import { useNavigate } from 'react-router';
 
 const upcomingEvents: Event[] = getUpcomingEvents();
 const recentEvents: Event[] = getRecentEvents();
@@ -102,6 +104,8 @@ export default function EventList() {
   const { hash } = useLocation();
   const [searchParams] = useSearchParams();
   const includePast = searchParams.get('includePast') === 'true';
+  const buildUrl = useBuildUrl();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (hash) {
@@ -112,17 +116,9 @@ export default function EventList() {
     }
   }, [hash]);
 
-  const displayEvents = upcomingEvents.map((event) => ({
-    ...event,
-    past: false,
-  }));
-  if (includePast) {
-    displayEvents.push(
-      ...recentEvents.map((event) => ({ ...event, past: true }))
-    );
-  }
+  const noUpcomingEvents = upcomingEvents.length === 0;
 
-  return displayEvents.map((event, index) => (
+  const createEventCard = (event: Event, past: boolean, index: number) => (
     <EventCard
       key={event.id || index}
       name={event.name}
@@ -134,7 +130,57 @@ export default function EventList() {
       latitude={event.latitude}
       longitude={event.longitude}
       id={event.id}
-      past={event.past}
+      past={past}
     />
-  ));
+  );
+
+  return (
+    <>
+      {upcomingEvents.map((event, index) =>
+        createEventCard(event, false, index)
+      )}
+
+      {noUpcomingEvents && (
+        <Typography
+          variant="h5"
+          style={{ textAlign: 'center', margin: '16px' }}
+        >
+          No upcoming events found.
+        </Typography>
+      )}
+
+      {!includePast && (
+        <Button
+          style={{ display: 'block', margin: '16px auto' }}
+          color="primary"
+          variant="contained"
+          onClick={() => {
+            const link = buildUrl('event-list', { includePast: 'true' });
+            navigate('/' + link);
+          }}
+        >
+          Show Past Events
+        </Button>
+      )}
+
+      {includePast && (
+        <>
+          <Button
+            style={{ display: 'block', margin: '16px auto' }}
+            color="primary"
+            variant="contained"
+            onClick={() => {
+              const link = buildUrl('event-list', { includePast: 'false' });
+              navigate('/' + link);
+            }}
+          >
+            Hide Past Events
+          </Button>
+          {recentEvents.map((event, index) =>
+            createEventCard(event, true, index + upcomingEvents.length)
+          )}
+        </>
+      )}
+    </>
+  );
 }
