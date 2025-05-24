@@ -6,8 +6,10 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import { useNavigate } from 'react-router-dom';
+import ListIcon from '@mui/icons-material/List';
+import MapIcon from '@mui/icons-material/Map';
+import HomeIcon from '@mui/icons-material/Home';
 
 export interface MyDrawerProps {
   open: boolean;
@@ -25,7 +27,7 @@ export default function MyDrawer(props: MyDrawerProps) {
         <ListItem key="Home" disablePadding>
           <ListItemButton onClick={() => navigate('/home')}>
             <ListItemIcon>
-              <InboxIcon />
+              <HomeIcon />
             </ListItemIcon>
             <ListItemText primary="Home" />
           </ListItemButton>
@@ -43,7 +45,7 @@ export default function MyDrawer(props: MyDrawerProps) {
         <ListItem key="Event List" disablePadding>
           <ListItemButton onClick={() => navigate('/event-list')}>
             <ListItemIcon>
-              <MailIcon />
+              <ListIcon />
             </ListItemIcon>
             <ListItemText primary="Events List" />
           </ListItemButton>
@@ -52,27 +54,13 @@ export default function MyDrawer(props: MyDrawerProps) {
         <ListItem key="Event Map" disablePadding>
           <ListItemButton onClick={() => navigate('/event-map')}>
             <ListItemIcon>
-              <InboxIcon />
+              <MapIcon />
             </ListItemIcon>
             <ListItemText primary="Events Map" />
           </ListItemButton>
         </ListItem>
       </List>
-      {/* <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List> */}
     </>
-    // </Box>
   );
 
   return (
