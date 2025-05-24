@@ -8,7 +8,11 @@ import {
 } from '@mui/material';
 import ReactMarkdown from 'react-markdown';
 import { Event } from '../../types/types';
-import { getUpcomingEvents, getRecentEvents } from '../../util/events';
+import {
+  getUpcomingEvents,
+  getRecentEvents,
+  sortEventsByStart,
+} from '../../util/events';
 import { useLocation } from 'react-router';
 import { useEffect } from 'react';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
@@ -136,7 +140,7 @@ export default function EventList() {
 
   return (
     <>
-      {upcomingEvents.map((event, index) =>
+      {sortEventsByStart(upcomingEvents, false).map((event, index) =>
         createEventCard(event, false, index)
       )}
 
@@ -176,7 +180,7 @@ export default function EventList() {
           >
             Hide Past Events
           </Button>
-          {recentEvents.map((event, index) =>
+          {sortEventsByStart(recentEvents, true).map((event, index) =>
             createEventCard(event, true, index + upcomingEvents.length)
           )}
         </>

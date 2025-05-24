@@ -47,21 +47,54 @@ function parseEvent(json: EventJson): Event | null {
     }
 }
 
-export function getUpcomingEvents(){
-  const now = new Date();
-  const twoMonthsFromNow = new Date();
-  twoMonthsFromNow.setMonth(now.getMonth() + 2);
+function splitUpcomingEvents(){
+    const partitions = {
+        distantFuture: [] as Event[],
+        upcoming: [] as Event[],
+        past: [] as Event[],
+    }
 
-    return futureEvents.map((eventJson: EventJson) => parseEvent(eventJson)).filter((event: Event|null) => {
+    const now = new Date();
+    const twoMonthsFromNow = new Date();
+    twoMonthsFromNow.setMonth(now.getMonth() + 2);
+  
+    for(const eventJson of futureEvents) {
+        const event = parseEvent(eventJson);
         if (event === null) {
-            return false;
+            continue;
         }
         const start = event.start;
         const end = event.end;
-        return end >= now && start <= twoMonthsFromNow;
-    }) as Event[];
+
+        if (end < now) {
+            partitions.past.push(event);
+        } else if (start <= twoMonthsFromNow) {
+            partitions.upcoming.push(event);
+        }else{
+            partitions.distantFuture.push(event);
+        }
+    }
+
+    return partitions;
+}
+
+export function getUpcomingEvents(){
+    return splitUpcomingEvents().upcoming;
 }
 
 export function getRecentEvents() {
-    return recentEvents.map((eventJson: EventJson) => parseEvent(eventJson)).filter((event: Event|null) => event !== null) as Event[];
+    const parsedRecentEvents = recentEvents.map((eventJson: EventJson) => parseEvent(eventJson)).filter((event: Event|null) => event !== null) as Event[];
+    const additionalParsedRecentEvents = splitUpcomingEvents().past;
+
+    return [...parsedRecentEvents, ...additionalParsedRecentEvents];
+}
+
+export function sortEventsByStart(events: Event[], descending=false): Event[] {
+    const sorted = [...events];
+    if (descending) {
+        sorted.sort((a, b) => b.start.getTime() - a.start.getTime());
+    }else {        
+        sorted.sort((a, b) => a.start.getTime() - b.start.getTime());
+    }
+    return sorted
 }
