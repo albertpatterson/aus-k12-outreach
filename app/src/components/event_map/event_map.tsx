@@ -4,10 +4,12 @@ import {
   Map,
   InfoWindow,
   useAdvancedMarkerRef,
+  Pin,
 } from '@vis.gl/react-google-maps';
 import { useState } from 'react';
-import { Box, Button } from '@mui/material';
+import { Box, Button, Typography, Link } from '@mui/material';
 import { useBuildUrl } from '../../util/url';
+import { sortEventsByStart } from '../../util/events';
 import { useNavigate } from 'react-router';
 import { Event } from '../../types/types';
 import { getUpcomingEvents, getRecentEvents } from '../../util/events';
@@ -22,6 +24,7 @@ interface MarkerProps {
   onClickMarker?: () => void;
   onCloseInfo?: () => void;
   eventId: string;
+  past?: boolean;
 }
 
 function Marker(props: MarkerProps) {
@@ -36,7 +39,15 @@ function Marker(props: MarkerProps) {
         onClick={props.onClickMarker}
         position={props.position}
         title={props.title}
-      />
+      >
+        {props.past && (
+          <Pin
+            background={'#9E9E9E'}
+            borderColor={'#616161'}
+            glyphColor={'#dadada'}
+          />
+        )}
+      </AdvancedMarker>
 
       {props.showInfo && (
         <InfoWindow
@@ -45,10 +56,14 @@ function Marker(props: MarkerProps) {
           onCloseClick={props.onCloseInfo}
           headerDisabled={true}
         >
-          <div>
-            <p>{props.title}</p>
-            <a href={link}>More Info</a>
-          </div>
+          <Box>
+            <Typography variant="body2" component="div" color="text.primary">
+              {props.title}
+            </Typography>
+            <Link href={link} variant="body2">
+              More Info
+            </Link>
+          </Box>
         </InfoWindow>
       )}
     </>
@@ -77,12 +92,7 @@ export default function EventMap() {
 
   const position = { lat: 30.266375800188623, lng: -97.7491266114782 };
 
-  const events = [...upcomingEvents];
-  if (includePast) {
-    events.push(...recentEvents);
-  }
-
-  const markers = events.map((event, index) => (
+  const makeMarker = (event: Event, index: number, past: boolean) => (
     <Marker
       key={event.id || index}
       title={event.name}
@@ -91,8 +101,19 @@ export default function EventMap() {
       onClickMarker={() => handleMarkerClick(index)}
       onCloseInfo={handleCloseInfo}
       eventId={event.id}
+      past={past}
     />
-  ));
+  );
+
+  const recentEventMarkers = includePast
+    ? sortEventsByStart(recentEvents, false).map((event, index) =>
+        makeMarker(event, index + upcomingEvents.length, true)
+      )
+    : [];
+  const upcomingEventMarkers = sortEventsByStart(upcomingEvents, true).map(
+    (event, index) => makeMarker(event, index, false)
+  );
+  const markers = [...recentEventMarkers, ...upcomingEventMarkers];
 
   return (
     <Box sx={{ display: 'flex', height: '100%', width: '100%' }}>
