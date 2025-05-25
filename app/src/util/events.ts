@@ -1,5 +1,4 @@
-import futureEvents from '../../../data/json/future-events.json' with { type: 'json' };
-import recentEvents from '../../../data/json/recent-events.json' with { type: 'json' };
+import recentAndFutureEvents from '../../../data/json/recent-and-future-events.json' with { type: 'json' };
 import {replaceEmailWithMarkdown, replaceRawLinkWithMarkdown} from './markdown';
 import {Event} from '../types/types';
 
@@ -47,7 +46,13 @@ function parseEvent(json: EventJson): Event | null {
     }
 }
 
-function splitUpcomingEvents(){
+interface EventPartition {
+    distantFuture: Event[];
+    upcoming: Event[];
+    past: Event[];
+}
+
+function partitionEvents(eventsJson: EventJson[]): EventPartition {
     const partitions = {
         distantFuture: [] as Event[],
         upcoming: [] as Event[],
@@ -58,7 +63,7 @@ function splitUpcomingEvents(){
     const twoMonthsFromNow = new Date();
     twoMonthsFromNow.setMonth(now.getMonth() + 2);
   
-    for(const eventJson of futureEvents) {
+    for(const eventJson of eventsJson) {
         const event = parseEvent(eventJson);
         if (event === null) {
             continue;
@@ -78,15 +83,15 @@ function splitUpcomingEvents(){
     return partitions;
 }
 
+const EVENT_PARTITIONS  = partitionEvents(recentAndFutureEvents)
+
+
 export function getUpcomingEvents(){
-    return splitUpcomingEvents().upcoming;
+    return EVENT_PARTITIONS.upcoming;
 }
 
 export function getRecentEvents() {
-    const parsedRecentEvents = recentEvents.map((eventJson: EventJson) => parseEvent(eventJson)).filter((event: Event|null) => event !== null) as Event[];
-    const additionalParsedRecentEvents = splitUpcomingEvents().past;
-
-    return [...parsedRecentEvents, ...additionalParsedRecentEvents];
+    return EVENT_PARTITIONS.past;
 }
 
 export function sortEventsByStart(events: Event[], descending=false): Event[] {

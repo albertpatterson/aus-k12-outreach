@@ -25,6 +25,7 @@ interface MarkerProps {
   onCloseInfo?: () => void;
   eventId: string;
   past?: boolean;
+  zIndex?: number;
 }
 
 function Marker(props: MarkerProps) {
@@ -39,6 +40,7 @@ function Marker(props: MarkerProps) {
         onClick={props.onClickMarker}
         position={props.position}
         title={props.title}
+        zIndex={props.zIndex}
       >
         {props.past && (
           <Pin
@@ -47,6 +49,7 @@ function Marker(props: MarkerProps) {
             glyphColor={'#dadada'}
           />
         )}
+        {!props.past && <Pin />}
       </AdvancedMarker>
 
       {props.showInfo && (
@@ -102,18 +105,26 @@ export default function EventMap() {
       onCloseInfo={handleCloseInfo}
       eventId={event.id}
       past={past}
+      zIndex={index}
     />
   );
 
-  const recentEventMarkers = includePast
-    ? sortEventsByStart(recentEvents, false).map((event, index) =>
-        makeMarker(event, index + upcomingEvents.length, true)
-      )
+  const allEvents = includePast
+    ? sortEventsByStart(recentEvents, false).map((event) => ({
+        event,
+        past: true,
+      }))
     : [];
-  const upcomingEventMarkers = sortEventsByStart(upcomingEvents, true).map(
-    (event, index) => makeMarker(event, index, false)
+  allEvents.push(
+    ...sortEventsByStart(upcomingEvents, true).map((event) => ({
+      event,
+      past: false,
+    }))
   );
-  const markers = [...recentEventMarkers, ...upcomingEventMarkers];
+
+  const markers = allEvents.map((eventData, index) =>
+    makeMarker(eventData.event, index, eventData.past)
+  );
 
   return (
     <Box sx={{ display: 'flex', height: '100%', width: '100%' }}>
