@@ -5,8 +5,10 @@ import {
   InfoWindow,
   useAdvancedMarkerRef,
   Pin,
+  MapCameraProps,
+  MapCameraChangedEvent,
 } from '@vis.gl/react-google-maps';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { Box, Button, Typography, Link } from '@mui/material';
 import { useBuildUrl } from '../../util/url';
 import { sortEventsByStart } from '../../util/events';
@@ -17,6 +19,8 @@ import { useSearchParams } from 'react-router-dom';
 
 const upcomingEvents: Event[] = getUpcomingEvents();
 const recentEvents: Event[] = getRecentEvents();
+const DEFAULT_POSITION = { lat: 30.266375800188623, lng: -97.7491266114782 };
+
 interface MarkerProps {
   title: string;
   position: google.maps.LatLngLiteral;
@@ -26,6 +30,56 @@ interface MarkerProps {
   eventId: string;
   past?: boolean;
   zIndex?: number;
+}
+
+function getCenter(
+  upcomingEvents: Event[],
+  recentEvents: Event[],
+  includePast: boolean
+) {
+  if (!includePast && upcomingEvents.length === 0) {
+    return DEFAULT_POSITION;
+  }
+
+  if (upcomingEvents.length === 0 && recentEvents.length === 0) {
+    return DEFAULT_POSITION;
+  }
+
+  const allEvents = includePast
+    ? [...upcomingEvents, ...recentEvents]
+    : upcomingEvents;
+
+  const avgLatLng = allEvents.reduce(
+    (acc, event) => {
+      acc.lat += event.latitude;
+      acc.lng += event.longitude;
+      return acc;
+    },
+    { lat: 0, lng: 0 }
+  );
+  const avgLat = avgLatLng.lat / allEvents.length;
+  const avgLng = avgLatLng.lng / allEvents.length;
+
+  if (isNaN(avgLat) || isNaN(avgLng)) {
+    return DEFAULT_POSITION;
+  }
+  if (avgLat < -90 || avgLat > 90 || avgLng < -180 || avgLng > 180) {
+    return DEFAULT_POSITION;
+  }
+
+  return { lat: avgLat, lng: avgLng };
+}
+
+function getCameraProps(
+  upcomingEvents: Event[],
+  recentEvents: Event[],
+  includePast: boolean
+): MapCameraProps {
+  const center = getCenter(upcomingEvents, recentEvents, includePast);
+  return {
+    center,
+    zoom: 9.5,
+  };
 }
 
 function Marker(props: MarkerProps) {
@@ -93,7 +147,31 @@ export default function EventMap() {
     setOpenInfoIdx(null);
   };
 
-  const position = { lat: 30.266375800188623, lng: -97.7491266114782 };
+  const initialCamera = getCameraProps(
+    upcomingEvents,
+    recentEvents,
+    includePast
+  );
+  const [cameraProps, setCameraProps] = useState<MapCameraProps>(initialCamera);
+  const handleCameraChange = useCallback(
+    (ev: MapCameraChangedEvent) => setCameraProps(ev.detail),
+    []
+  );
+
+  const handleTogglePastEventsClick = useCallback(() => {
+    setOpenInfoIdx(null);
+    const newIncludePast = !includePast;
+    const link = buildUrl('event-map', {
+      includePast: `${newIncludePast}`,
+    });
+    const cameraProps = getCameraProps(
+      upcomingEvents,
+      recentEvents,
+      newIncludePast
+    );
+    setCameraProps(cameraProps);
+    navigate('/' + link);
+  }, [buildUrl, includePast, navigate]);
 
   const makeMarker = (event: Event, index: number, past: boolean) => (
     <Marker
@@ -130,8 +208,8 @@ export default function EventMap() {
     <Box sx={{ display: 'flex', height: '100%', width: '100%' }}>
       <APIProvider apiKey={'AIzaSyA2VFJ0asBxip0AAndV846lgJLJzLyzvto'}>
         <Map
-          defaultCenter={position}
-          defaultZoom={9.5}
+          {...cameraProps}
+          onCameraChanged={handleCameraChange}
           mapId="AUS-K12-Outreach-Event-Map"
           style={{ flex: 1 }}
           onClick={handleMapClick}
@@ -146,12 +224,7 @@ export default function EventMap() {
             }}
             variant="contained"
             color="primary"
-            onClick={() => {
-              const link = buildUrl('event-map', {
-                includePast: `${!includePast}`,
-              });
-              navigate('/' + link);
-            }}
+            onClick={handleTogglePastEventsClick}
           >
             {includePast ? 'Hide Past Events' : 'Show Past Events'}
           </Button>
