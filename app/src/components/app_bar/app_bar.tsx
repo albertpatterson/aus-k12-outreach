@@ -17,7 +17,6 @@ export default function MyAppBar() {
 
   const closeDrawer = () => {
     setOpen(false);
-    console.log('closeDrawer');
     return undefined;
   };
 
