@@ -1,14 +1,14 @@
 export function parseContact(row) {
   const [name, description, email, linkedin] = row;
 
-  if (!name || !description) {
+  if (!name) {
     console.warn(`failed to parse contact: ${name}`);
     return null;
   }
 
   return {
     name,
-    description,
+    description: description || '',
     email: email || '',
     linkedin: linkedin || '',
   };

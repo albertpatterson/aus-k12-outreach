@@ -16,9 +16,11 @@ function ContactCard(contact: Contact) {
         <Typography variant="h5" component="div">
           {contact.name}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {contact.description}
-        </Typography>
+        {contact.description && (
+          <Typography variant="body2" color="text.secondary">
+            {contact.description}
+          </Typography>
+        )}
         {contact.linkedin && (
           <Typography variant="body1" color="text.secondary">
             <strong>

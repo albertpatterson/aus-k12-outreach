@@ -12,7 +12,7 @@ export interface Event {
 
 export interface Contact {
     name: string;
-    description: string;
+    description?: string;
     email?: string;
     linkedin?: string;
 }

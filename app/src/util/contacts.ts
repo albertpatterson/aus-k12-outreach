@@ -11,7 +11,7 @@ interface ContactJson {
 
 function parseContact(json: ContactJson): Contact | null {
 
-    if(!(json.name && json.description)){
+    if(!(json.name)){
         console.error('Event is missing required fields:', json);
         return null;
     }

@@ -1,41 +1,5 @@
 [
   {
-    "name": "test  3",
-    "description": "disc 3",
-    "start": "2025-05-30T20:00:00.000Z",
-    "end": "2025-05-30T21:00:00.000Z",
-    "location": "abcd",
-    "signUpLink": "email test@test.com",
-    "signUpByEmailInstruction": "",
-    "latitude": 30.41,
-    "longitude": -97.53,
-    "id": "test--3-2025-05-30T20-00-00-000Z"
-  },
-  {
-    "name": "test  2",
-    "description": "disc 2",
-    "start": "2025-05-28T18:00:00.000Z",
-    "end": "2025-05-28T19:00:00.000Z",
-    "location": "abcd",
-    "signUpLink": "email test@test.com",
-    "signUpByEmailInstruction": "",
-    "latitude": 30.42,
-    "longitude": -97.52,
-    "id": "test--2-2025-05-28T18-00-00-000Z"
-  },
-  {
-    "name": "test  1",
-    "description": "disc 1",
-    "start": "2025-05-27T13:00:00.000Z",
-    "end": "2025-05-27T14:00:00.000Z",
-    "location": "abcd",
-    "signUpLink": "email test@test.com",
-    "signUpByEmailInstruction": "",
-    "latitude": 30.43,
-    "longitude": -97.51,
-    "id": "test--1-2025-05-27T13-00-00-000Z"
-  },
-  {
     "name": "Pioneer Elementary Career Day",
     "description": "Meet students and eductors in person at a career day event where you discuss your work and help students get ideas about what they want to do when they grow up",
     "start": "2025-05-23T13:00:00.000Z",
@@ -130,5 +94,101 @@
     "latitude": 30.548331390609288,
     "longitude": -97.43118247612668,
     "id": "Career-Fair-at-Taylor-High-School-2025-05-01T18-30-00-000Z"
+  },
+  {
+    "name": "Crockett Early College High School Career Showcase",
+    "description": "Meet students and eductors in person at a career day event where you discuss your work and help students get ideas about what they want to do when they grow up",
+    "start": "2025-04-29T05:00:00.000Z",
+    "end": "2025-04-29T05:00:00.000Z",
+    "location": "5601 Menchaca Rd, Austin, TX 78745",
+    "signUpLink": "-",
+    "signUpByEmailInstruction": "",
+    "latitude": 30.213511202595118,
+    "longitude": -97.79674494729963,
+    "id": "Crockett-Early-College-High-School-Career-Showcase-2025-04-29T05-00-00-000Z"
+  },
+  {
+    "name": "Capstone Project End of Year Presentations",
+    "description": "Attend engineering course capstone project presentations in which high schoolers talk about their work. Also provide feed back to help them learn more about real world engineering.",
+    "start": "2025-04-24T05:00:00.000Z",
+    "end": "2025-04-24T05:00:00.000Z",
+    "location": "5720 McNeil Dr, Austin, TX 78729",
+    "signUpLink": "-",
+    "signUpByEmailInstruction": "",
+    "latitude": 30.449656546261618,
+    "longitude": -97.73316238979142,
+    "id": "Capstone-Project-End-of-Year-Presentations-2025-04-24T05-00-00-000Z"
+  },
+  {
+    "name": "Career Day: Pflugerville High School",
+    "description": "Meet students and eductors in person at a career day event where you discuss your work and help students get ideas about what they want to do when they grow up",
+    "start": "2025-04-07T05:00:00.000Z",
+    "end": "2025-04-07T05:00:00.000Z",
+    "location": "1301 W Pecan St, Pflugerville, TX 78660",
+    "signUpLink": "-",
+    "signUpByEmailInstruction": "",
+    "latitude": 30.44485966896112,
+    "longitude": -97.63269636078522,
+    "id": "Career-Day--Pflugerville-High-School-2025-04-07T05-00-00-000Z"
+  },
+  {
+    "name": "Westwood High School Career Showcase",
+    "description": "Meet students and eductors in person at a career day event where you discuss your work and help students get ideas about what they want to do when they grow up",
+    "start": "2025-03-28T05:00:00.000Z",
+    "end": "2025-03-28T05:00:00.000Z",
+    "location": "12400 Mellow Meadow Dr, Austin, TX 78750",
+    "signUpLink": "-",
+    "signUpByEmailInstruction": "",
+    "latitude": 30.456283664180425,
+    "longitude": -97.79777983794582,
+    "id": "Westwood-High-School-Career-Showcase-2025-03-28T05-00-00-000Z"
+  },
+  {
+    "name": "Alternative Learning Center Career Day",
+    "description": "Meet students and eductors in person at a career day event where you discuss your work and help students get ideas about what they want to do when they grow up",
+    "start": "2025-03-28T05:00:00.000Z",
+    "end": "2025-03-28T05:00:00.000Z",
+    "location": "4900 Gonzales St, Austin, TX 78702",
+    "signUpLink": "-",
+    "signUpByEmailInstruction": "",
+    "latitude": 30.256041272075457,
+    "longitude": -97.6971094051745,
+    "id": "Alternative-Learning-Center-Career-Day-2025-03-28T05-00-00-000Z"
+  },
+  {
+    "name": "Gardner-Betts Juvenile Center Career Day",
+    "description": "Meet students and eductors in person at a career day event where you discuss your work and help students get ideas about what they want to do when they grow up",
+    "start": "2025-03-27T05:00:00.000Z",
+    "end": "2025-03-27T05:00:00.000Z",
+    "location": "2515 S Congress Ave, Austin, TX 78704",
+    "signUpLink": "-",
+    "signUpByEmailInstruction": "",
+    "latitude": 30.236221079512234,
+    "longitude": -97.75456667634238,
+    "id": "Gardner-Betts-Juvenile-Center-Career-Day-2025-03-27T05-00-00-000Z"
+  },
+  {
+    "name": "Northeast ECHS Career Fair",
+    "description": "Meet students and eductors in person at a career day event where you discuss your work and help students get ideas about what they want to do when they grow up",
+    "start": "2025-03-26T05:00:00.000Z",
+    "end": "2025-03-26T05:00:00.000Z",
+    "location": "7104 Berkman Dr, Austin, TX 78752",
+    "signUpLink": "-",
+    "signUpByEmailInstruction": "",
+    "latitude": 30.322478874790264,
+    "longitude": -97.68983910311637,
+    "id": "Northeast-ECHS-Career-Fair-2025-03-26T05-00-00-000Z"
+  },
+  {
+    "name": "Del Valle High School Career Fair",
+    "description": "Meet students and eductors in person at a career day event where you discuss your work and help students get ideas about what they want to do when they grow up",
+    "start": "2025-03-11T05:00:00.000Z",
+    "end": "2025-03-11T05:00:00.000Z",
+    "location": "5201 Ross Rd, Del Valle, TX 78617",
+    "signUpLink": "-",
+    "signUpByEmailInstruction": "",
+    "latitude": 30.18032898893224,
+    "longitude": -97.61193308777598,
+    "id": "Del-Valle-High-School-Career-Fair-2025-03-11T05-00-00-000Z"
   }
 ]
