@@ -1,5 +1,17 @@
 [
   {
+    "name": "SYEP Career Expo",
+    "description": "Travis County's Summer Youth Employment Program (SYEP) is hosting a Career Expo for SYEP participants and they would love for YOU to attend! Come speak to summer interns between the ages 14-17 who are looking to kick start their career.",
+    "start": "2025-06-09T17:30:00.000Z",
+    "end": "2025-06-09T19:00:00.000Z",
+    "location": "1504 E 51st St, Austin, TX 78723",
+    "signUpLink": "https://urldefense.com/v3/__https://traviscountytx.jotform.com/250628460364861__;!!OAqB8m26hw!t3GXBJLwB5VzzNqvHK1JzMOogh83YOKT7C8sEs7x810JmxLjFlF63pWVysnkA_0m6rUaWOpEhVcCGCAv61PnYlOx5V9ZzBSSl9uvDKZiRH3hanfF$",
+    "signUpByEmailInstruction": "",
+    "latitude": 30.305851276357995,
+    "longitude": -97.70128336809576,
+    "id": "SYEP-Career-Expo-2025-06-09T17-30-00-000Z"
+  },
+  {
     "name": "Pioneer Elementary Career Day",
     "description": "Meet students and eductors in person at a career day event where you discuss your work and help students get ideas about what they want to do when they grow up",
     "start": "2025-05-23T13:00:00.000Z",
