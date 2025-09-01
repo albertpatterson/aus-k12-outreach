@@ -44,7 +44,7 @@ const StyledMarkdown = (props: { markdown: string }) => (
   </ReactMarkdown>
 );
 
-interface EventCardProps extends Event {
+interface EventCardProps extends Omit<Event, 'coordinatesList'> {
   past?: boolean;
 }
 
@@ -131,8 +131,6 @@ export default function EventList() {
       end={event.end}
       location={event.location}
       signUpMarkdown={event.signUpMarkdown}
-      latitude={event.latitude}
-      longitude={event.longitude}
       id={event.id}
       past={past}
     />

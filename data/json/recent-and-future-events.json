@@ -1,5 +1,69 @@
 [
   {
+    "name": "What's Next Wednesdays at Elgin HS",
+    "description": "What’s Next Wednesdays is a weekly opportunity for students to connect with colleges, universities, military branches, trade/technical schools, and career training organizations. The goal is to help students explore post-secondary options through direct engagement and conversations.",
+    "start": "2025-08-20T05:00:00.000Z",
+    "end": "2026-05-20T05:00:00.000Z",
+    "location": "Elgin High School",
+    "signUpLink": "",
+    "signUpByEmailInstruction": "contact Jasmine Pool at jasmine.pool@elginisd.net",
+    "coordinatesList": [
+      {
+        "latitude": 30.369032451156322,
+        "longitude": -97.40815413315406
+      }
+    ],
+    "id": "What-s-Next-Wednesdays-at-Elgin-HS-2025-08-20T05-00-00-000Z"
+  },
+  {
+    "name": "Middle School Lunch Takeovers",
+    "description": "Workforce Solutions Capital Area is partnering with local middle schools to bring Lunch Takeovers! This is a yearlong series where we allow companies and organizations to table and speak to middle school students during their lunch period.",
+    "start": "2025-08-20T05:00:00.000Z",
+    "end": "2026-05-20T05:00:00.000Z",
+    "location": "Multiple Locations",
+    "signUpLink": "https://outlook.office365.com/book/K12LunchTakeover@wfscapitalarea.com/?ismsaljsauthenabled=true",
+    "signUpByEmailInstruction": "",
+    "coordinatesList": [
+      {
+        "latitude": 30.357128187057615,
+        "longitude": -97.56228667164946
+      },
+      {
+        "latitude": 30.39845319814256,
+        "longitude": -97.64293713487882
+      },
+      {
+        "latitude": 30.31119984611335,
+        "longitude": -97.64325100674573
+      },
+      {
+        "latitude": 30.24297796087976,
+        "longitude": -97.5896161569789
+      },
+      {
+        "latitude": 30.16407063104395,
+        "longitude": -97.87277703489337
+      },
+      {
+        "latitude": 30.23510329086458,
+        "longitude": -97.78891149070807
+      },
+      {
+        "latitude": 30.343752163815356,
+        "longitude": -97.57411341349147
+      },
+      {
+        "latitude": 30.358367363223163,
+        "longitude": -97.3866902637175
+      },
+      {
+        "latitude": 30.190612704482923,
+        "longitude": -97.71268589256405
+      }
+    ],
+    "id": "Middle-School-Lunch-Takeovers-2025-08-20T05-00-00-000Z"
+  },
+  {
     "name": "SYEP Career Expo",
     "description": "Travis County's Summer Youth Employment Program (SYEP) is hosting a Career Expo for SYEP participants and they would love for YOU to attend! Come speak to summer interns between the ages 14-17 who are looking to kick start their career.",
     "start": "2025-06-09T17:30:00.000Z",
@@ -7,8 +71,12 @@
     "location": "1504 E 51st St, Austin, TX 78723",
     "signUpLink": "https://urldefense.com/v3/__https://traviscountytx.jotform.com/250628460364861__;!!OAqB8m26hw!t3GXBJLwB5VzzNqvHK1JzMOogh83YOKT7C8sEs7x810JmxLjFlF63pWVysnkA_0m6rUaWOpEhVcCGCAv61PnYlOx5V9ZzBSSl9uvDKZiRH3hanfF$",
     "signUpByEmailInstruction": "",
-    "latitude": 30.305851276357995,
-    "longitude": -97.70128336809576,
+    "coordinatesList": [
+      {
+        "latitude": 30.305851276357995,
+        "longitude": -97.70128336809576
+      }
+    ],
     "id": "SYEP-Career-Expo-2025-06-09T17-30-00-000Z"
   },
   {
@@ -19,8 +87,12 @@
     "location": "7104 Berkman Dr, Austin, TX 78752",
     "signUpLink": "https://docs.google.com/forms/d/e/1FAIpQLScGgGY7UIM-wGu6-xDwUEfj9kaem1O3x9pYdd9M60zDAJxkdQ/viewform",
     "signUpByEmailInstruction": "",
-    "latitude": 30.361920728985606,
-    "longitude": -97.63991398591864,
+    "coordinatesList": [
+      {
+        "latitude": 30.361920728985606,
+        "longitude": -97.63991398591864
+      }
+    ],
     "id": "Pioneer-Elementary-Career-Day-2025-05-23T13-00-00-000Z"
   },
   {
@@ -31,8 +103,12 @@
     "location": "7414 Johnny Morris Rd, Austin, TX 78724",
     "signUpLink": "https://docs.google.com/forms/d/1vD474rJUc4agpQeKqP1dSsl9lFDswX0hNpmRGAzjpyA/alreadyresponded?edit_requested=true",
     "signUpByEmailInstruction": "",
-    "latitude": 30.3109892943715,
-    "longitude": -97.6422223301003,
+    "coordinatesList": [
+      {
+        "latitude": 30.3109892943715,
+        "longitude": -97.6422223301003
+      }
+    ],
     "id": "Garcia-YMLA-Career-Day-2025-05-22T18-00-00-000Z"
   },
   {
@@ -43,8 +119,12 @@
     "location": "7309 Lazy Creek Dr, Austin, TX 78724",
     "signUpLink": "https://click-1755152.icptrack.com/icp/relay.php?r=113353674&msgid=384749&act=6X56&c=1755152&pid=830533&destination=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSdd2AjBN7EpK5Z0VWzOc3ilKprnMX1eHFvkCeEhEIouLyRggw%2Fviewform&cf=10033&v=7de64a7f2c6fa12b7de280ca8d1e32849ac3624cf6c0a1cf2b2735b645b164ff",
     "signUpByEmailInstruction": "",
-    "latitude": 30.313848610328442,
-    "longitude": -97.65685159167107,
+    "coordinatesList": [
+      {
+        "latitude": 30.313848610328442,
+        "longitude": -97.65685159167107
+      }
+    ],
     "id": "College--Career--and-Job-Fair-at-LBJ-Early-College-High-School-2025-05-21T13-30-00-000Z"
   },
   {
@@ -55,8 +135,12 @@
     "location": "18010 Blake Manor Rd, Manor, TX 78653",
     "signUpLink": "https://docs.google.com/forms/d/e/1FAIpQLScGgGY7UIM-wGu6-xDwUEfj9kaem1O3x9pYdd9M60zDAJxkdQ/viewform",
     "signUpByEmailInstruction": "",
-    "latitude": 30.308693829845947,
-    "longitude": -97.53337681534424,
+    "coordinatesList": [
+      {
+        "latitude": 30.308693829845947,
+        "longitude": -97.53337681534424
+      }
+    ],
     "id": "Blake-Manor-Career-Day-2025-05-16T18-00-00-000Z"
   },
   {
@@ -67,8 +151,12 @@
     "location": "10701 S 1st St, Austin, TX 78748",
     "signUpLink": "https://docs.google.com/forms/d/e/1FAIpQLSccffj0v4mKLbmGP-YgfFoOdlwaM1sZLoatVF2cgAOX-CMKxQ/viewform",
     "signUpByEmailInstruction": "",
-    "latitude": 30.148849914616292,
-    "longitude": -97.8015862859244,
+    "coordinatesList": [
+      {
+        "latitude": 30.148849914616292,
+        "longitude": -97.8015862859244
+      }
+    ],
     "id": "Akins-Early-College-High-School-Career-Fair-2025-05-15T22-30-00-000Z"
   },
   {
@@ -79,8 +167,12 @@
     "location": "7201 Colony Loop Dr, Austin, TX 78724",
     "signUpLink": "",
     "signUpByEmailInstruction": "Message Jasmine Lee at jasmine.lee@austinisd.org",
-    "latitude": 30.300780038085087,
-    "longitude": -97.63570328777269,
+    "coordinatesList": [
+      {
+        "latitude": 30.300780038085087,
+        "longitude": -97.63570328777269
+      }
+    ],
     "id": "Overton-Elementary-Career-Showcase-2025-05-08T13-00-00-000Z"
   },
   {
@@ -91,8 +183,12 @@
     "location": "13300 FM-973, Manor, TX 78653",
     "signUpLink": "",
     "signUpByEmailInstruction": "Message Samantha at Samantha.Ruiz-Gross@wfscapitalarea.com.",
-    "latitude": 30.356313062685345,
-    "longitude": -97.53729230311548,
+    "coordinatesList": [
+      {
+        "latitude": 30.356313062685345,
+        "longitude": -97.53729230311548
+      }
+    ],
     "id": "Manor-Rise-Academy-Career-Day-2025-05-02T13-00-00-000Z"
   },
   {
@@ -103,8 +199,12 @@
     "location": "355 FM 973. Taylor, TX 76574",
     "signUpLink": "https://docs.google.com/forms/d/e/1FAIpQLSd1HajIZgS3bsNOBMMUFyqXb1gXPOoMsxbJ27qYiCYkK6vIGg/viewform?usp=sharing",
     "signUpByEmailInstruction": "",
-    "latitude": 30.548331390609288,
-    "longitude": -97.43118247612668,
+    "coordinatesList": [
+      {
+        "latitude": 30.548331390609288,
+        "longitude": -97.43118247612668
+      }
+    ],
     "id": "Career-Fair-at-Taylor-High-School-2025-05-01T18-30-00-000Z"
   },
   {
@@ -115,8 +215,12 @@
     "location": "5601 Menchaca Rd, Austin, TX 78745",
     "signUpLink": "-",
     "signUpByEmailInstruction": "",
-    "latitude": 30.213511202595118,
-    "longitude": -97.79674494729963,
+    "coordinatesList": [
+      {
+        "latitude": 30.213511202595118,
+        "longitude": -97.79674494729963
+      }
+    ],
     "id": "Crockett-Early-College-High-School-Career-Showcase-2025-04-29T05-00-00-000Z"
   },
   {
@@ -127,8 +231,12 @@
     "location": "5720 McNeil Dr, Austin, TX 78729",
     "signUpLink": "-",
     "signUpByEmailInstruction": "",
-    "latitude": 30.449656546261618,
-    "longitude": -97.73316238979142,
+    "coordinatesList": [
+      {
+        "latitude": 30.449656546261618,
+        "longitude": -97.73316238979142
+      }
+    ],
     "id": "Capstone-Project-End-of-Year-Presentations-2025-04-24T05-00-00-000Z"
   },
   {
@@ -139,8 +247,12 @@
     "location": "1301 W Pecan St, Pflugerville, TX 78660",
     "signUpLink": "-",
     "signUpByEmailInstruction": "",
-    "latitude": 30.44485966896112,
-    "longitude": -97.63269636078522,
+    "coordinatesList": [
+      {
+        "latitude": 30.44485966896112,
+        "longitude": -97.63269636078522
+      }
+    ],
     "id": "Career-Day--Pflugerville-High-School-2025-04-07T05-00-00-000Z"
   },
   {
@@ -151,8 +263,12 @@
     "location": "12400 Mellow Meadow Dr, Austin, TX 78750",
     "signUpLink": "-",
     "signUpByEmailInstruction": "",
-    "latitude": 30.456283664180425,
-    "longitude": -97.79777983794582,
+    "coordinatesList": [
+      {
+        "latitude": 30.456283664180425,
+        "longitude": -97.79777983794582
+      }
+    ],
     "id": "Westwood-High-School-Career-Showcase-2025-03-28T05-00-00-000Z"
   },
   {
@@ -163,8 +279,12 @@
     "location": "4900 Gonzales St, Austin, TX 78702",
     "signUpLink": "-",
     "signUpByEmailInstruction": "",
-    "latitude": 30.256041272075457,
-    "longitude": -97.6971094051745,
+    "coordinatesList": [
+      {
+        "latitude": 30.256041272075457,
+        "longitude": -97.6971094051745
+      }
+    ],
     "id": "Alternative-Learning-Center-Career-Day-2025-03-28T05-00-00-000Z"
   },
   {
@@ -175,8 +295,12 @@
     "location": "2515 S Congress Ave, Austin, TX 78704",
     "signUpLink": "-",
     "signUpByEmailInstruction": "",
-    "latitude": 30.236221079512234,
-    "longitude": -97.75456667634238,
+    "coordinatesList": [
+      {
+        "latitude": 30.236221079512234,
+        "longitude": -97.75456667634238
+      }
+    ],
     "id": "Gardner-Betts-Juvenile-Center-Career-Day-2025-03-27T05-00-00-000Z"
   },
   {
@@ -187,8 +311,12 @@
     "location": "7104 Berkman Dr, Austin, TX 78752",
     "signUpLink": "-",
     "signUpByEmailInstruction": "",
-    "latitude": 30.322478874790264,
-    "longitude": -97.68983910311637,
+    "coordinatesList": [
+      {
+        "latitude": 30.322478874790264,
+        "longitude": -97.68983910311637
+      }
+    ],
     "id": "Northeast-ECHS-Career-Fair-2025-03-26T05-00-00-000Z"
   },
   {
@@ -199,8 +327,12 @@
     "location": "5201 Ross Rd, Del Valle, TX 78617",
     "signUpLink": "-",
     "signUpByEmailInstruction": "",
-    "latitude": 30.18032898893224,
-    "longitude": -97.61193308777598,
+    "coordinatesList": [
+      {
+        "latitude": 30.18032898893224,
+        "longitude": -97.61193308777598
+      }
+    ],
     "id": "Del-Valle-High-School-Career-Fair-2025-03-11T05-00-00-000Z"
   }
 ]

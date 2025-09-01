@@ -18,5 +18,8 @@
   ],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "vite": "^7.1.2"
+  }
 }

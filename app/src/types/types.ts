@@ -1,3 +1,8 @@
+export interface Coordinates {
+    latitude: number;
+    longitude: number;
+}
+
 export interface Event {
     name: string;
     description: string;
@@ -5,8 +10,7 @@ export interface Event {
     end: Date;
     location: string;
     signUpMarkdown: string;
-    latitude: number;
-    longitude: number;
+    coordinatesList: Coordinates[];
     id: string;
   }
 

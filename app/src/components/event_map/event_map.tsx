@@ -49,16 +49,21 @@ function getCenter(
     ? [...upcomingEvents, ...recentEvents]
     : upcomingEvents;
 
-  const avgLatLng = allEvents.reduce(
-    (acc, event) => {
-      acc.lat += event.latitude;
-      acc.lng += event.longitude;
+  const allCoordinates = []
+  for(const event of allEvents){
+    allCoordinates.push(...event.coordinatesList)
+  }
+
+  const avgLatLng = allCoordinates.reduce(
+    (acc, coordinates) => {
+      acc.lat += coordinates.latitude;
+      acc.lng += coordinates.longitude;
       return acc;
     },
     { lat: 0, lng: 0 }
   );
-  const avgLat = avgLatLng.lat / allEvents.length;
-  const avgLng = avgLatLng.lng / allEvents.length;
+  const avgLat = avgLatLng.lat / allCoordinates.length;
+  const avgLng = avgLatLng.lng / allCoordinates.length;
 
   if (isNaN(avgLat) || isNaN(avgLng)) {
     return DEFAULT_POSITION;
@@ -173,11 +178,11 @@ export default function EventMap() {
     navigate('/' + link);
   }, [buildUrl, includePast, navigate]);
 
-  const makeMarker = (event: Event, index: number, past: boolean) => (
+  const makeMarker = (event: Event, latitude:number, longitude:number, index: number, past: boolean) => (
     <Marker
-      key={event.id || index}
+      key={`${event.id}-${latitude}-${longitude}`}
       title={event.name}
-      position={{ lat: event.latitude, lng: event.longitude }}
+      position={{ lat: latitude, lng: longitude }}
       showInfo={openInfoIdx === index}
       onClickMarker={() => handleMarkerClick(index)}
       onCloseInfo={handleCloseInfo}
@@ -200,9 +205,16 @@ export default function EventMap() {
     }))
   );
 
-  const markers = allEvents.map((eventData, index) =>
-    makeMarker(eventData.event, index, eventData.past)
-  );
+  const markers = []
+  let markerIndex=0
+  for(const eventData of allEvents){
+    for(const coordinates of eventData.event.coordinatesList){
+      markers.push(
+        makeMarker(eventData.event, coordinates.latitude, coordinates.longitude, markerIndex, eventData.past)
+      )
+      markerIndex++;
+    }
+  }
 
   return (
     <Box sx={{ display: 'flex', height: '100%', width: '100%' }}>

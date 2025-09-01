@@ -1,6 +1,6 @@
 import recentAndFutureEvents from '../../../data/json/recent-and-future-events.json' with { type: 'json' };
 import {replaceEmailWithMarkdown, replaceRawLinkWithMarkdown} from './markdown';
-import {Event} from '../types/types';
+import {Event, Coordinates} from '../types/types';
 
 interface EventJson {
     name?: string;
@@ -10,8 +10,7 @@ interface EventJson {
     location?: string;
     signUpLink?: string;
     signUpByEmailInstruction?: string;
-    latitude?: number;
-    longitude?: number;
+    coordinatesList?: Coordinates[];
     id?: string;
 }
 
@@ -28,10 +27,12 @@ function parseEvent(json: EventJson): Event | null {
 
     const signUpMarkdown = getSignUpMarkdown(json);
 
-    if(!(json.name && json.description && json.start && json.end && json.location && signUpMarkdown && json.latitude && json.longitude && json.id)){
+    if(!(json.name && json.description && json.start && json.end && json.location && signUpMarkdown && json.coordinatesList && json.id)){
         console.error('Event is missing required fields:', json);
         return null;
     }
+
+    const coordinatesList: Coordinates[] = json.coordinatesList || []
 
     return {
         name: json.name,
@@ -40,8 +41,7 @@ function parseEvent(json: EventJson): Event | null {
         end: new Date(json.end),
         location: json.location,
         signUpMarkdown: signUpMarkdown,
-        latitude: json.latitude,
-        longitude: json.longitude,
+        coordinatesList,
         id: json.id,
     }
 }

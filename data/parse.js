@@ -24,6 +24,11 @@ function parseLatLong(latlong) {
   }
 }
 
+function parseLatLongs(latLongsStr){
+  const latLongStrs = latLongsStr.split(';').map(ll=>ll.trim())
+  return latLongStrs.map(parseLatLong)
+}
+
 export function parseEvent(row) {
   const [
     name,
@@ -33,17 +38,16 @@ export function parseEvent(row) {
     location,
     signUpLink,
     signUpByEmailInstruction,
-    latlong,
+    latlongsStr,
   ] = row;
 
   const signUp = signUpLink || signUpByEmailInstruction;
 
-  const { latitude, longitude } = parseLatLong(latlong);
+  const coordinatesList = parseLatLongs(latlongsStr);
 
   if (
     !(name && description && start && end && location && signUp,
-    latitude,
-    longitude)
+    coordinatesList)
   ) {
     console.warn(`failed to parse event: ${name}`);
     return null;
@@ -57,8 +61,7 @@ export function parseEvent(row) {
     location,
     signUpLink: signUpLink || '',
     signUpByEmailInstruction: signUpByEmailInstruction || '',
-    latitude,
-    longitude,
+    coordinatesList
   };
 }
 
